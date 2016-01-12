@@ -38,7 +38,7 @@ var previousThicknessElement;
 
 function changePty(imgElement) {
   imgElement.className = "Selected";
-  previousColorElement = imgElement;
+  previousElement = imgElement;
 }
 
 //color: Color
@@ -47,8 +47,8 @@ function changeColor(color, imgElement) {
   changePty.call(this, color)
   context.strokeStyle = color;
 
-  if (previousColorElement !== null) {
-    previousColorElement.className = "";
+  if (previousElement !== null) {
+    previousElement.className = "";
   }
 }
 
@@ -56,8 +56,8 @@ function changeThickness(thickness, imgElement) {
   changePty.call(this, thickness)
   context.lineWidth = thickness;
 
-  if (previousThicknessElement !== null) {
-    previousThicknessElement.className = "";
+  if (previousElement !== null) {
+    previousElement.className = "";
   }
 }
 
