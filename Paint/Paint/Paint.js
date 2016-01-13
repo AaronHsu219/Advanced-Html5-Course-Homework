@@ -10,6 +10,8 @@ window.onload = function() {
     canvas.onmouseup = stopDrawing;
     canvas.onmouseout = stopDrawing;
     canvas.onmousemove = draw;
+    previousColorElement = null;
+    previousThicknessElement = null;
 };
 
 function startDrawing(e) {
