@@ -10,8 +10,9 @@ window.onload = function() {
   canvas.onmouseup = stopDrawing;
   canvas.onmouseout = stopDrawing;
   canvas.onmousemove = draw;
-  previousColorElement = null;
-  previousThicknessElement = null;
+  // previousColorElement = null;
+  // previousThicknessElement = null;
+  previousElement = null;
 };
 
 function startDrawing(e) {
@@ -35,33 +36,40 @@ function draw(e) {
   }
 }
 
-var previousColorElement;
-var previousThicknessElement;
+// var previousColorElement;
+// var previousThicknessElement;
+var previousElement;
 
 function changePty(imgElement) {
   imgElement.className = "Selected";
+  if (previousElement !== null) {
+    previousElement.className = "";
+  }
+  previousElement = imgElement;
 }
 
 //color: Color
 //imgElement: DOM Object
 function changeColor(color, imgElement) {
   changePty.call(this, color)
+    // imgElement.className = "Selected";
   context.strokeStyle = color;
 
-  if (previousColorElement !== null) {
-    previousColorElement.className = "";
-  }
-  previousColorElement = imgElement;
+  /*  if (previousColorElement !== null) {
+      previousColorElement.className = "";
+    }
+    previousColorElement = imgElement;*/
 }
 
 function changeThickness(thickness, imgElement) {
   changePty.call(this, thickness)
+    // imgElement.className = "Selected";
   context.lineWidth = thickness;
-
-  if (previousThicknessElement !== null) {
+  /*if (previousThicknessElement !== null) {
     previousThicknessElement.className = "";
   }
   previousThicknessElement = imgElement;
+  */
 }
 
 function clearCanvas() {
