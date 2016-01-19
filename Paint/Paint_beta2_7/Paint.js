@@ -11,6 +11,8 @@ window.onload = function() {
   canvas.onmouseout = stopDrawing;
   canvas.onmousemove = draw;
   previousElement = null;
+  previousColorElement = null;
+  previousThicknessElement = null;
 };
 
 function startDrawing(e) {
@@ -35,6 +37,8 @@ function draw(e) {
 }
 
 var previousElement;
+var ColorElement;
+var ThicknessElement;
 
 function changePty(imgElement) {
   imgElement.className = "Selected";
